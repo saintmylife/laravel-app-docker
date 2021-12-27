@@ -12,7 +12,7 @@ Simple docker-compose for Laravel, with postgresql, reddis, nginx and php-fpm
 + open project directory.
 + `cp .env.example .env` to use env config file
 + Run `docker-compose up -d` to start the containers.
-+ Visit http://localhost:8000 to see your Laravel application.
++ Visit http://localhost:9000 to see your Laravel application.
 + Try to connect 127.0.0.1:5432 to access Postgres
 + After starting, note that one directory and one file will be created with name *postgres* and file *data*, this files are Database archives
 + After Succesfully Installed. run `docker-compose exec php-fpm composer install && docker-compose exec php-fpm php artisan jwt:secret && docker-compose exec php-fpm php artisan config:clear && docker-compose exec php-fpm php artisan config:cache && docker-compose exec php-fpm php artisan migrate && docker-compose exec php-fpm php artisan db:seed`
