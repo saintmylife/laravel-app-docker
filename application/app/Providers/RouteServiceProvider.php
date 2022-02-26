@@ -37,6 +37,9 @@ class RouteServiceProvider extends ServiceProvider
     public function boot()
     {
         // $this->configureRateLimiting();
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/web.php'));
 
         $this->routes(function () {
             $routeFiles = glob(base_path('routes/api/*.php'));

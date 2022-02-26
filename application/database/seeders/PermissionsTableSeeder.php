@@ -28,8 +28,8 @@ class PermissionsTableSeeder extends Seeder
             'edit-sites',
             'delete-sites',
         ];
-        
-        foreach($permissions as $permission){
+
+        foreach ($permissions as $permission) {
             Permission::create(['name' => $permission]);
         }
 

@@ -1,3 +1,4 @@
 .env
 sourcefiles/postgres/
 sourcefiles/nginx/conf.d/cloud*
+sourcefiles/nginx/log
