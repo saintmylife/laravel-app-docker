@@ -17,7 +17,7 @@ services:
         working_dir: /application
         container_name: ${PROJECT_NAME}-php-fpm
         volumes:
-            - ./application:/application
+            - application-unison-sync:/application:nocopy
         depends_on:
             - postgres
         networks:
@@ -28,7 +28,7 @@ services:
       build: sourcefiles/nginx
       container_name: ${PROJECT_NAME}-webserver
       volumes:
-          - ./application:/application
+          - application-unison-sync:/application:nocopy
           - ./sourcefiles/nginx/conf.d:/etc/nginx/conf.d
           - ./sourcefiles/nginx/log:/var/log/nginx/
       ports:
@@ -38,6 +38,9 @@ services:
       networks:
             testing_net:
                 ipv4_address: 172.27.1.3
+volumes:
+    application-unison-sync:
+        external: true
 
 networks:
     testing_net:

@@ -1,4 +1,5 @@
 .env
+.docker-sync
 sourcefiles/postgres/
 sourcefiles/nginx/conf.d/cloud*
 sourcefiles/nginx/log

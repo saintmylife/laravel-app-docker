@@ -5,6 +5,7 @@ Simple docker-compose for Laravel, with postgresql, redis, nginx and php-fpm
 # Pre-requisites
 
 - Docker running on the host machine.
+- Docker-sync installed on the host machine.
 - Docker compose running on the host machine.
 - Basic knowledge of Docker.
 
@@ -15,6 +16,7 @@ Simple docker-compose for Laravel, with postgresql, redis, nginx and php-fpm
 - open project directory.
 - `cp .env.example .env` to use docker env config file
 - `cp application/.env.example application/.env` for laravel env (change db,user and password in accordance with the docker .env)
+- Run `docker-sync start` to start the docker-sync.
 - Run `docker-compose up -d` to start the containers.
 - Visit http://localhost:9000 to see your Laravel application.
 - Try to connect 127.0.0.1:5433 to access Postgres
@@ -27,6 +29,7 @@ Simple docker-compose for Laravel, with postgresql, redis, nginx and php-fpm
 - `docker-compose up -d` to start all containers
 - `docker-compose down` to stop all containers
 - If you need to restart after modifying _docker-compose.yml_ restart with `docker-compose down` and `docker-compose up -d`
+- `docker-sync stop && docker-sync clean` to stop and remove all docker-sync endpoints
 
 # Images
 
@@ -45,6 +48,7 @@ Simple docker-compose for Laravel, with postgresql, redis, nginx and php-fpm
 
 ### volumes:
 
+- application-unison-sync (for faster loading files)
 - nginx folder
 - data(postgres)
 
